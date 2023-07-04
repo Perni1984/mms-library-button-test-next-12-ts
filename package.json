@@ -9,16 +9,35 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.4.8",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "@lifarl/react-scroll-snap-slider": "^2.0.5",
+    "@mms/shared-ui-svg": "1.56.8",
+    "@mms/webmobile-sc-components": "5.5.29",
+    "next": "12.3.4",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-grid-layout": "^1.3.4"
   },
   "devDependencies": {
     "@types/node": "20.3.3",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
+    "@types/react": "17.0.62",
+    "@types/react-dom": "17.0.20",
+    "@types/react-grid-layout": "^1.3.2",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.8",
+    "prettier": "2.8.8",
     "typescript": "5.1.6"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "react-dropzone@14.2.3": "patches/react-dropzone@14.2.3.patch"
+    },
+    "overrides": {
+      "@types/react": "17.0.62",
+      "@types/react-dom": "17.0.20"
+    }
+  },
+  "resolutions": {
+    "**/@types/react": "17.0.62",
+    "**/@types/react-dom": "17.0.20"
   }
 }
