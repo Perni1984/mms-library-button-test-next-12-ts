@@ -3,7 +3,8 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { CardProductGrids } from "@mms/webmobile-sc-components";
 import { ModularCardProduct } from "../src/CardProduct.mock";
-import GridLayout from "react-grid-layout";
+import { Responsive, WidthProvider }  from "react-grid-layout";
+const ResponsiveGridLayout = WidthProvider(Responsive);
 
 const Home: NextPage = () => {
   const layout = [
@@ -30,7 +31,7 @@ const Home: NextPage = () => {
         </a>
       </header>
       <main>
-        <GridLayout className="layout" layout={layout} cols={4} rowHeight={660}>
+        <ResponsiveGridLayout className="layout" cols={{ lg: 6, md: 6, sm: 6, xs: 4, xxs: 2 }} rowHeight={800}>
           <div key="a">
             {" "}
             {ModularCardProduct(
@@ -83,7 +84,7 @@ const Home: NextPage = () => {
               true
             )}
           </div>
-        </GridLayout>
+        </ResponsiveGridLayout>
       </main>
     </div>
   );
